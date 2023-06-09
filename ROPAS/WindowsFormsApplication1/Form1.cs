@@ -91,29 +91,53 @@ namespace WindowsFormsApplication1
                     else
                     {
                         picboxcomputer.Image = picboxsang.Image;
-                        lblwinstate.Text = "بازی مساوی شد";
-                        listBox1.Items.Add("مساوی");
+                        lblwinstate.Text = "The game equalised";
+                        listBox1.Items.Add("equal");
+                    }
+
+                    break;
+                case 2:
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " کامپیوتر برنده شد";
+                        listBox1.Items.Add("کامپیوتر برنده شد : کاغذ به دور سنگ می پیچد");
+                        picboxplayer.BackColor = Color.Red;
+                        picboxcomputer.BackColor = Color.Green;
+                        Amtcomputer++;
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " Computer Win";
+                        listBox1.Items.Add(" Computer Win ");
+                        picboxplayer.BackColor = Color.Red;
+                        picboxcomputer.BackColor = Color.Green;
+                        Amtcomputer++;
                     }
 
 
                     break;
-                case 2:
-
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = " کامپیوتر برنده شد";
-                    listBox1.Items.Add("کامپیوتر برنده شد : کاغذ به دور سنگ می پیچد");
-                    picboxplayer.BackColor = Color.Red;
-                    picboxcomputer.BackColor = Color.Green;
-                    Amtcomputer++;
-
-                    break;
                 case 3:
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = " بازیکن برنده شد";
-                    listBox1.Items.Add("بازیکن برنده شد : سنگ قیچی را له می کند ");
-                    picboxplayer.BackColor = Color.Green;
-                    picboxcomputer.BackColor = Color.Red;
-                    AmtPlayer++;
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " بازیکن برنده شد";
+                        listBox1.Items.Add("بازیکن برنده شد : سنگ قیچی را له می کند ");
+                        picboxplayer.BackColor = Color.Green;
+                        picboxcomputer.BackColor = Color.Red;
+                        AmtPlayer++;
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = "Player Win";
+                        listBox1.Items.Add("Player Win ");
+                        picboxplayer.BackColor = Color.Green;
+                        picboxcomputer.BackColor = Color.Red;
+                        AmtPlayer++;
+                    }
+
                     break;
 
             }
@@ -142,17 +166,39 @@ namespace WindowsFormsApplication1
                     Amtcomputer++;
                     break;
                 case 2:
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = " بازیکن برنده شد";
-                    listBox1.Items.Add("بازیکن برنده شد : قیچی کاغذ را قطعه قطعه می کند");
-                    picboxplayer.BackColor = Color.Green;
-                    picboxcomputer.BackColor = Color.Red;
-                    AmtPlayer++;
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " بازیکن برنده شد";
+                        listBox1.Items.Add("بازیکن برنده شد : قیچی کاغذ را قطعه قطعه می کند");
+                        picboxplayer.BackColor = Color.Green;
+                        picboxcomputer.BackColor = Color.Red;
+                        AmtPlayer++;
+                    }
+                    else
+                    {
+                            picboxcomputer.Image = picboxkaghaz.Image;
+                            lblwinstate.Text = "Player Win";
+                            listBox1.Items.Add("Player Win ");
+                            picboxplayer.BackColor = Color.Green;
+                            picboxcomputer.BackColor = Color.Red;
+                            AmtPlayer++;
+                    }
+
                     break;
                 case 3:
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = "بازی مساوی شد";
-                    listBox1.Items.Add("مساوی");
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxsang.Image;
+                        lblwinstate.Text = "بازی مساوی شد";
+                        listBox1.Items.Add("مساوی");
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxsang.Image;
+                        lblwinstate.Text = "The game equalised";
+                        listBox1.Items.Add("equal");
+                    }
 
                     break;
 
@@ -182,10 +228,18 @@ namespace WindowsFormsApplication1
                     AmtPlayer++;
                     break;
                 case 2:
-
-                    picboxcomputer.Image = picboxsang.Image;
-                    lblwinstate.Text = "بازی مساوی شد";
-                    listBox1.Items.Add("مساوی");
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxsang.Image;
+                        lblwinstate.Text = "بازی مساوی شد";
+                        listBox1.Items.Add("مساوی");
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxsang.Image;
+                        lblwinstate.Text = "The game equalised";
+                        listBox1.Items.Add("equal");
+                    }
                     break;
                 case 3:
                     picboxcomputer.Image = picboxkaghaz.Image;
