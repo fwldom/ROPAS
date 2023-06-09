@@ -301,6 +301,9 @@ namespace WindowsFormsApplication1
             panelplayer.BackColor = Color.LightGray;
             panelcomputer.BackColor = Color.LightGray;
             listBox1.Items.Clear();
+            EndGame.ResetText();
+            Endtext.ResetText();
+
         }
         #endregion
         #region End game
@@ -409,6 +412,11 @@ namespace WindowsFormsApplication1
         private void scissors_Click(object sender, EventArgs e)
         {
             pictureBox1_Click(sender, e);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
