@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ROPAS.Properties
+namespace WindowsFormsApplication1.Properties
 {
 
 
