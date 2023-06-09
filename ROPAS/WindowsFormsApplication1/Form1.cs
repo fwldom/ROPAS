@@ -14,10 +14,49 @@ namespace WindowsFormsApplication1
     {
         public int AmtPlayer = 0;
         public int Amtcomputer = 0;
-
+        public string Language = "";
         public fwldom()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            foreach (Control Cont in this.Controls)
+            {
+                if (Cont is Button)
+                {
+                    Button btn = (Button)Cont;
+                    btn.TabStop = false;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderSize = 0;
+                }
+
+
+            }
+            if (MessageBox.Show("choose Language?\n Yes = Persian\n No = English", "Choose Language", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                notifyIcon1.BalloonTipText = "سلام به بازی روپاس خوش آمدید. ساخته شده توسط fwldom";
+                notifyIcon1.BalloonTipTitle = "خوش آمدید . ";
+                notifyIcon1.Icon = SystemIcons.Application;
+                notifyIcon1.ShowBalloonTip(5);
+                rock.Text = ("سنگ");
+                Paper.Text = "کاغذ";
+                scissors.Text = ("قیچی");
+                Language = "persian";
+            }
+            else if (MessageBox.Show("choose Language?\n Yes = Persian\n No = English", "Choose Language", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                notifyIcon1.BalloonTipText = "Welcome To ROPAS Game Made By Fwldom";
+                notifyIcon1.BalloonTipTitle = "Welcome . ";
+                notifyIcon1.Icon = SystemIcons.Application;
+                notifyIcon1.ShowBalloonTip(5);
+                rock.Text = ("Rock");
+                Paper.Text = "Paper";
+                scissors.Text=("Scissors");
+                menuStrip1.Text = "Reset";
+                EndGame.Text = "Finish Game";
+                Language = "english";
+            }
+
+
         }
         private void lblwinstate_Click(object sender, EventArgs e)
         {
@@ -43,10 +82,19 @@ namespace WindowsFormsApplication1
             switch (computerchoise)
             {
                 case 1:
+                    if (Language == "persian" )
+                    {
+                        picboxcomputer.Image = picboxsang.Image;
+                        lblwinstate.Text = "بازی مساوی شد";
+                        listBox1.Items.Add("مساوی");
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxsang.Image;
+                        lblwinstate.Text = "بازی مساوی شد";
+                        listBox1.Items.Add("مساوی");
+                    }
 
-                    picboxcomputer.Image = picboxsang.Image;
-                    lblwinstate.Text = "بازی مساوی شد";
-                    listBox1.Items.Add("مساوی");
 
                     break;
                 case 2:
@@ -168,15 +216,27 @@ namespace WindowsFormsApplication1
             if (AmtPlayer == Amtcomputer)
             {
                 Endtext.Text = "بازی  مساوی شد ";
+                MessageBox.Show("بازی مساوی شد\n" +
+                                $"امتیاز بازیکن: {AmtPlayer} \n" +
+                                $"امتیاز کامپیوتر: {Amtcomputer} \n" +
+                                 "!!!!!!!!!", "نتایج بازی ");
 
             }
             if (Amtcomputer > AmtPlayer)
             {
                 Endtext.Text = "کامپیوتر بازی را برد ";
+                MessageBox.Show("کامپیوتر بازی را برد\n" +
+                $"امتیاز بازیکن: {AmtPlayer} \n" +
+                $"امتیاز کامپیوتر: {Amtcomputer} \n" +
+                 "!!!!!!!!!", "نتایج بازی ");
             }
             if (AmtPlayer > Amtcomputer)
             {
                 Endtext.Text = "بازیکن بازی را برد";
+                MessageBox.Show(" بازیکن بازی را برد\n" +
+                $"امتیاز بازیکن: {AmtPlayer} \n" +
+                $"امتیاز کامپیوتر: {Amtcomputer} \n" +
+                 "!!!!!!!!!", "نتایج بازی ");
             }
         }
 #endregion

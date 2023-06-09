@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.picboxkaghaz = new System.Windows.Forms.PictureBox();
             this.picboxGhaeychiey = new System.Windows.Forms.PictureBox();
             this.picboxsang = new System.Windows.Forms.PictureBox();
@@ -43,6 +44,10 @@
             this.EndGame = new System.Windows.Forms.Button();
             this.End = new System.Windows.Forms.Label();
             this.Endtext = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.rock = new System.Windows.Forms.Button();
+            this.Paper = new System.Windows.Forms.Button();
+            this.scissors = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxkaghaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxGhaeychiey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picboxsang)).BeginInit();
@@ -68,7 +73,7 @@
             // picboxGhaeychiey
             // 
             this.picboxGhaeychiey.Image = global::WindowsFormsApplication1.Properties.Resources.Scissor;
-            this.picboxGhaeychiey.Location = new System.Drawing.Point(118, 245);
+            this.picboxGhaeychiey.Location = new System.Drawing.Point(118, 242);
             this.picboxGhaeychiey.Name = "picboxGhaeychiey";
             this.picboxGhaeychiey.Size = new System.Drawing.Size(102, 94);
             this.picboxGhaeychiey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -78,6 +83,7 @@
             // 
             // picboxsang
             // 
+            this.picboxsang.BackColor = System.Drawing.Color.LavenderBlush;
             this.picboxsang.Image = global::WindowsFormsApplication1.Properties.Resources.Rock;
             this.picboxsang.Location = new System.Drawing.Point(118, 42);
             this.picboxsang.Name = "picboxsang";
@@ -112,7 +118,7 @@
             // 
             this.panelplayer.BackColor = System.Drawing.Color.Transparent;
             this.panelplayer.Controls.Add(this.picboxplayer);
-            this.panelplayer.Location = new System.Drawing.Point(464, 53);
+            this.panelplayer.Location = new System.Drawing.Point(464, 62);
             this.panelplayer.Name = "panelplayer";
             this.panelplayer.Size = new System.Drawing.Size(78, 81);
             this.panelplayer.TabIndex = 6;
@@ -201,14 +207,52 @@
             this.Endtext.TabIndex = 12;
             this.Endtext.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            // 
+            // rock
+            // 
+            this.rock.Font = new System.Drawing.Font("Yu Gothic", 10F);
+            this.rock.Location = new System.Drawing.Point(37, 79);
+            this.rock.Name = "rock";
+            this.rock.Size = new System.Drawing.Size(75, 36);
+            this.rock.TabIndex = 13;
+            this.rock.Text = "Rock";
+            this.rock.UseVisualStyleBackColor = true;
+            // 
+            // Paper
+            // 
+            this.Paper.Font = new System.Drawing.Font("Yu Gothic", 10F);
+            this.Paper.Location = new System.Drawing.Point(37, 165);
+            this.Paper.Name = "Paper";
+            this.Paper.Size = new System.Drawing.Size(75, 36);
+            this.Paper.TabIndex = 14;
+            this.Paper.Text = "Paper";
+            this.Paper.UseVisualStyleBackColor = true;
+            // 
+            // scissors
+            // 
+            this.scissors.Font = new System.Drawing.Font("Yu Gothic", 10F);
+            this.scissors.Location = new System.Drawing.Point(37, 270);
+            this.scissors.Name = "scissors";
+            this.scissors.Size = new System.Drawing.Size(75, 36);
+            this.scissors.TabIndex = 15;
+            this.scissors.Text = "scissors";
+            this.scissors.UseVisualStyleBackColor = true;
+            // 
             // fwldom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.bgg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(905, 455);
+            this.Controls.Add(this.scissors);
+            this.Controls.Add(this.Paper);
+            this.Controls.Add(this.rock);
             this.Controls.Add(this.Endtext);
             this.Controls.Add(this.End);
             this.Controls.Add(this.EndGame);
@@ -261,6 +305,10 @@
         private System.Windows.Forms.Button EndGame;
         private System.Windows.Forms.Label End;
         private System.Windows.Forms.Label Endtext;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Button rock;
+        private System.Windows.Forms.Button Paper;
+        private System.Windows.Forms.Button scissors;
     }
 }
 
