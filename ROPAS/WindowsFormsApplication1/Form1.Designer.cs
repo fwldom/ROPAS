@@ -221,6 +221,7 @@
             this.rock.TabIndex = 13;
             this.rock.Text = "Rock";
             this.rock.UseVisualStyleBackColor = true;
+            this.rock.Click += new System.EventHandler(this.rock_Click);
             // 
             // Paper
             // 
@@ -231,6 +232,7 @@
             this.Paper.TabIndex = 14;
             this.Paper.Text = "Paper";
             this.Paper.UseVisualStyleBackColor = true;
+            this.Paper.Click += new System.EventHandler(this.Paper_Click);
             // 
             // scissors
             // 
@@ -241,6 +243,7 @@
             this.scissors.TabIndex = 15;
             this.scissors.Text = "scissors";
             this.scissors.UseVisualStyleBackColor = true;
+            this.scissors.Click += new System.EventHandler(this.scissors_Click);
             // 
             // fwldom
             // 

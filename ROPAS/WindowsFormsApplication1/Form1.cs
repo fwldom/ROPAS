@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
                 scissors.Text = ("قیچی");
                 Language = "persian";
             }
-            else if (MessageBox.Show("choose Language?\n Yes = Persian\n No = English", "Choose Language", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            else 
             {
                 notifyIcon1.BalloonTipText = "Welcome To ROPAS Game Made By Fwldom";
                 notifyIcon1.BalloonTipTitle = "Welcome . ";
@@ -158,12 +158,24 @@ namespace WindowsFormsApplication1
             switch (computerchoise)
             {
                 case 1:
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = "کامپیوتر برنده شد";
-                    listBox1.Items.Add("کامپیوتر برنده شد : سنگ قیچی را له میکند ");
-                    picboxplayer.BackColor = Color.Red;
-                    picboxcomputer.BackColor = Color.Green;
-                    Amtcomputer++;
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = "کامپیوتر برنده شد";
+                        listBox1.Items.Add("کامپیوتر برنده شد : سنگ قیچی را له میکند ");
+                        picboxplayer.BackColor = Color.Red;
+                        picboxcomputer.BackColor = Color.Green;
+                        Amtcomputer++;
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " Computer Win";
+                        listBox1.Items.Add(" Computer Win ");
+                        picboxplayer.BackColor = Color.Red;
+                        picboxcomputer.BackColor = Color.Green;
+                        Amtcomputer++;
+                    }
                     break;
                 case 2:
                     if (Language == "persian")
@@ -220,12 +232,26 @@ namespace WindowsFormsApplication1
             switch (computerchoise)
             {
                 case 1:
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = " بازیکن برنده شد";
-                    listBox1.Items.Add("بازیکن برنده شد : کاغذ به دور سنگ می پیچد");
-                    picboxplayer.BackColor = Color.Green;
-                    picboxcomputer.BackColor = Color.Red;
-                    AmtPlayer++;
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " بازیکن برنده شد";
+                        listBox1.Items.Add("بازیکن برنده شد : کاغذ به دور سنگ می پیچد");
+                        picboxplayer.BackColor = Color.Green;
+                        picboxcomputer.BackColor = Color.Red;
+                        AmtPlayer++;
+                    }
+                    else
+                    {
+                            picboxcomputer.Image = picboxkaghaz.Image;
+                            lblwinstate.Text = "Player Win";
+                            listBox1.Items.Add("Player Win ");
+                            picboxplayer.BackColor = Color.Green;
+                            picboxcomputer.BackColor = Color.Red;
+                            AmtPlayer++;
+                     }
+
+
                     break;
                 case 2:
                     if (Language == "persian")
@@ -237,17 +263,30 @@ namespace WindowsFormsApplication1
                     else
                     {
                         picboxcomputer.Image = picboxsang.Image;
-                        lblwinstate.Text = "The game equalised";
+                        lblwinstate.Text = "The Game equalised";
                         listBox1.Items.Add("equal");
                     }
                     break;
                 case 3:
-                    picboxcomputer.Image = picboxkaghaz.Image;
-                    lblwinstate.Text = " کامپیوتر برنده شد";
-                    listBox1.Items.Add("کامپیوتر برنده شد : قیچی کاغذ را قطعه قطعه می کند");
-                    picboxplayer.BackColor = Color.Red;
-                    picboxcomputer.BackColor = Color.Green;
-                    Amtcomputer++;
+                    if (Language == "persian")
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " کامپیوتر برنده شد";
+                        listBox1.Items.Add("کامپیوتر برنده شد : قیچی کاغذ را قطعه قطعه می کند");
+                        picboxplayer.BackColor = Color.Red;
+                        picboxcomputer.BackColor = Color.Green;
+                        Amtcomputer++;
+                    }
+                    else
+                    {
+                        picboxcomputer.Image = picboxkaghaz.Image;
+                        lblwinstate.Text = " Computer Win";
+                        listBox1.Items.Add(" Computer Win ");
+                        picboxplayer.BackColor = Color.Red;
+                        picboxcomputer.BackColor = Color.Green;
+                        Amtcomputer++;
+                    }
+
                     break;
 
             }
@@ -269,28 +308,65 @@ namespace WindowsFormsApplication1
         {
             if (AmtPlayer == Amtcomputer)
             {
-                Endtext.Text = "بازی  مساوی شد ";
-                MessageBox.Show("بازی مساوی شد\n" +
-                                $"امتیاز بازیکن: {AmtPlayer} \n" +
-                                $"امتیاز کامپیوتر: {Amtcomputer} \n" +
-                                 "!!!!!!!!!", "نتایج بازی ");
+                if (Language == "persian")
+                {
+                    Endtext.Text = "بازی مساوی شد   ";
+                    MessageBox.Show("بازی مساوی شد\n" +
+                                    $"امتیاز بازیکن: {AmtPlayer} \n" +
+                                    $"امتیاز کامپیوتر: {Amtcomputer} \n" +
+                                     "!!!!!!!!!", "نتایج بازی ");
+                }
+                else
+                {
+
+                    Endtext.Text = "The Game equalised ";
+                    MessageBox.Show("The Game equalised\n" +
+                                    $"XP Player : {AmtPlayer} \n" +
+                                    $"XP Computer : {Amtcomputer} \n" +
+                                     "!!!!!!!!!", "Game equalised ");
+                }
+
 
             }
             if (Amtcomputer > AmtPlayer)
             {
-                Endtext.Text = "کامپیوتر بازی را برد ";
-                MessageBox.Show("کامپیوتر بازی را برد\n" +
-                $"امتیاز بازیکن: {AmtPlayer} \n" +
-                $"امتیاز کامپیوتر: {Amtcomputer} \n" +
-                 "!!!!!!!!!", "نتایج بازی ");
+                if (Language == "persian")
+                {
+                    Endtext.Text = "کامپیوتر برد  ";
+                    MessageBox.Show("کامپیوتر برد  \n" +
+                                    $"امتیاز بازیکن: {AmtPlayer} \n" +
+                                    $"امتیاز کامپیوتر: {Amtcomputer} \n" +
+                                     "!!!!!!!!!", "کامپیوتر برد");
+                }
+                else
+                {
+
+                    Endtext.Text = "Computer Win ";
+                    MessageBox.Show("Computer Win\n" +
+                                    $"XP Player : {AmtPlayer} \n" +
+                                    $"XP Computer : {Amtcomputer} \n" +
+                                     "!!!!!!!!!", " Computer Win ");
+                }
             }
             if (AmtPlayer > Amtcomputer)
             {
-                Endtext.Text = "بازیکن بازی را برد";
-                MessageBox.Show(" بازیکن بازی را برد\n" +
-                $"امتیاز بازیکن: {AmtPlayer} \n" +
-                $"امتیاز کامپیوتر: {Amtcomputer} \n" +
-                 "!!!!!!!!!", "نتایج بازی ");
+                if (Language == "persian")
+                {
+                    Endtext.Text = "بازیکن برد";
+                    MessageBox.Show("بازیکن برد\n" +
+                                    $"امتیاز بازیکن: {AmtPlayer} \n" +
+                                    $"امتیاز کامپیوتر: {Amtcomputer} \n" +
+                                     "!!!!!!!!!", "بازیکن برد");
+                }
+                else
+                {
+
+                    Endtext.Text = "Player Win";
+                    MessageBox.Show("Player Win\n" +
+                                    $"XP Player : {AmtPlayer} \n" +
+                                    $"XP Computer : {Amtcomputer} \n" +
+                                     "!!!!!!!!!", "Player Win");
+                }
             }
         }
 #endregion
@@ -318,9 +394,25 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void rock_Click(object sender, EventArgs e)
+        {
+            sang_Click(sender,e);
+        }
+
+        private void Paper_Click(object sender, EventArgs e)
+        {
+            picboxkaghaz_Click(sender, e);
+
+        }
+
+        private void scissors_Click(object sender, EventArgs e)
+        {
+            pictureBox1_Click(sender, e);
+        }
     }
 }
-//made in fwldom
+//made By fwldom
 //for freedom
 //death to dictator
 //fwldom
